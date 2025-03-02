@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const email = params.get("email");
+        const destination = "https://custom-link.com?user=" + encodeURIComponent(email);
+        window.location.href = destination;
+    </script>
+</head>
+<body>
+    <p>If you are not redirected, <a id="redirectLink" href="#">click here</a>.</p>
+    <script> document.getElementById("redirectLink").href = destination; </script>
+</body>
+</html>
